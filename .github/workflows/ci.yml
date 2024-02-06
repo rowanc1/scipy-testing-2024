@@ -1,9 +1,11 @@
 name: MyST Paper Build
 on:
+  push:
+    branches: [main]
   pull_request:
     branches: [main]
 jobs:
-  lint:
+  build-paper:
     if: contains(github.event.pull_request.labels.*.name, 'paper')
     runs-on: ubuntu-latest
     steps:
