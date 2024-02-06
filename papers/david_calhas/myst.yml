@@ -26,7 +26,6 @@ project:
     - format: typst
       article: main.tex
       template: https://github.com/rowanc1/scipy-template.git
-      output: paper.pdf
       title: EEG-to-fMRI Neuroimaging Cross Modal Synthesis in Python
     - format: jats
       article: main.tex
