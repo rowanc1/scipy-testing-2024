@@ -7,7 +7,7 @@ on:
 permissions:
   contents: read
   issues: write
-  pull-requests: read
+  pull-requests: write
 jobs:
   preview:
     # Skip this action if we are not in a "paper" pull request
