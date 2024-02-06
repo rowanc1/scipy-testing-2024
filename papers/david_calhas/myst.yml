@@ -25,7 +25,9 @@ project:
   exports:
     - format: typst
       article: main.tex
-      # template: /Users/rowan/git/rowanc1/scipy2023
+      template: https://github.com/rowanc1/scipy-template.git
+      output: paper.pdf
+      title: EEG-to-fMRI Neuroimaging Cross Modal Synthesis in Python
     - format: jats
       article: main.tex
   doi: 10.25080/gerudo-f2bc6f59-007
