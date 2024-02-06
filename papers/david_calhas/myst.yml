@@ -25,7 +25,7 @@ project:
   exports:
     - format: typst
       article: main.tex
-      template: /Users/rowan/git/rowanc1/scipy2023
+      # template: /Users/rowan/git/rowanc1/scipy2023
     - format: jats
       article: main.tex
   doi: 10.25080/gerudo-f2bc6f59-007

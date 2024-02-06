@@ -4,9 +4,11 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+    # Ensure that this gets triggerer when the label is added
     types: [labeled]
 jobs:
   build-paper:
+    # Skip this action if we are not in a "paper" pull request
     if: contains(github.event.pull_request.labels.*.name, 'paper')
     runs-on: ubuntu-latest
     steps:
@@ -17,7 +19,10 @@ jobs:
         with:
           node-version: 20.x
       - name: Install MyST Markdown
-        run: npm install -g mystmd
-      - uses: typst-community/setup-typst@v3
+        run: npm install -g mystmd curvenote
+      - name: Install Typst for PDF builds
+        uses: typst-community/setup-typst@v3
       - run: myst -v
       - run: typst --version
+      - run: myst build --typst
+        working-directory: papers/david_calhas
