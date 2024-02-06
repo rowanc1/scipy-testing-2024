@@ -44,6 +44,7 @@ jobs:
         uses: peter-evans/create-or-update-comment@v4
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
+          edit-mode: replace
           body: |
             Build Results -- updated!
           reactions: rocket
