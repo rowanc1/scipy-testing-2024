@@ -1,0 +1,20 @@
+name: MyST Paper Build
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  lint:
+    if: contains(github.event.pull_request.labels.*.name, 'paper')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+      - name: Install MyST Markdown
+        run: npm install -g mystmd
+      - uses: typst-community/setup-typst@v3
+      - run: myst -v
+      - run: typst --version

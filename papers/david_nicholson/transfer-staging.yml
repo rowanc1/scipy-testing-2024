@@ -1,0 +1,14 @@
+version: 1
+scipy:
+  work:
+    id: 018ceee4-3353-7ad3-9c82-25242a1d2fb1
+    date_created: '2024-01-09T15:43:01.970Z'
+  workVersion:
+    id: 018ceee4-3353-7ad3-9c82-25251919f693
+    date_created: '2024-01-09T15:43:01.970Z'
+  submission:
+    id: 018ceee4-349a-7a65-9499-967617187675
+    date_created: '2024-01-09T15:43:02.295Z'
+  submissionVersion:
+    id: 018ceee4-349a-7a65-9499-967577d13348
+    date_created: '2024-01-09T15:43:02.295Z'
