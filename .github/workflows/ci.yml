@@ -4,6 +4,7 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+    types: [labeled]
 jobs:
   build-paper:
     if: contains(github.event.pull_request.labels.*.name, 'paper')
