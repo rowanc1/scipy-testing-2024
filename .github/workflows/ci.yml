@@ -51,7 +51,10 @@ jobs:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           edit-mode: replace
           body: |
-            Build Results -- updated!
+            Build Results
+
+            Artifacts:
+              - [PDF](https://github.com/rowanc1/scipy-testing-2024/actions/runs/${{ github.run_id }}])
           reactions: rocket
   check:
     # Skip this action if we are not in a "paper" pull request
