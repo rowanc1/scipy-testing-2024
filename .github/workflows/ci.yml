@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [main]
 jobs:
-  build-paper:
+  preview:
     # Skip this action if we are not in a "paper" pull request
     if: contains(github.event.pull_request.labels.*.name, 'paper')
     runs-on: ubuntu-latest
@@ -17,12 +17,23 @@ jobs:
         with:
           node-version: 20.x
       - name: Install MyST Markdown
-        run: npm install -g mystmd curvenote
+        run: npm install -g mystmd
       - name: Install Typst for PDF builds
         uses: typst-community/setup-typst@v3
-      - run: myst -v
-      - run: typst --version
       - run: myst build --typst
         working-directory: papers/david_calhas
+  check:
+    # Skip this action if we are not in a "paper" pull request
+    if: contains(github.event.pull_request.labels.*.name, 'paper')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+      - name: Install MyST Markdown
+        run: npm install -g curvenote
       - run: curvenote check
         working-directory: papers/david_calhas
