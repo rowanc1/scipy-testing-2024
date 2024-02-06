@@ -25,6 +25,11 @@ jobs:
         uses: typst-community/setup-typst@v3
       - run: myst build --typst
         working-directory: papers/david_calhas
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf
+          path: papers/david_calhas/_build/exports/myst_typst/main.pdf
       - name: Find Comment
         uses: peter-evans/find-comment@v3
         id: fc
