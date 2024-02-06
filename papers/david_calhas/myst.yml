@@ -34,7 +34,7 @@ project:
     EEG: electroencephalography
     fMRI: functional magnetic resonance imaging
     MRI: magnetic resonance imaging
-    RMSE: Root Mean Squared Error
+    RMSE: root mean squared error
 site:
   template: article-theme
   # title:
