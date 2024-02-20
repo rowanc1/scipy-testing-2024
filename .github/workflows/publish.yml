@@ -1,0 +1,68 @@
+name: publish
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  strategy:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.build-strategy.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: build-strategy
+        uses: curvenote/actions/strategy@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          monorepo: true
+          previewLabel: paper
+          path: papers/*
+  preview:
+    needs: strategy
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{fromJson(needs.strategy.outputs.matrix)}}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: curvenote/actions/setup@main
+      - uses: curvenote/actions/submit@main
+        env:
+          CURVENOTE_TOKEN: ${{ secrets.CURVENOTE_TOKEN }}
+        with:
+          venue: scipy
+          kind: Article
+          working-directory: ${{ matrix.working-directory }}
+          draft: true
+  check:
+    needs: strategy
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{fromJson(needs.strategy.outputs.matrix)}}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: curvenote/actions/setup@main
+        with:
+          typst: false
+          images: false
+      - run: curvenote check
+        working-directory: ${{ matrix.working-directory }}
+  # comment:
+  #   needs:
+  #     - preview
+  #     - check
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: curvenote/actions/comment@main
+  #       with:
+  #         build-urls: ${{needs.preview.outputs.build-url-0}}
+  #     - run: curvenote check
+  #       working-directory: ${{ matrix.working-directory }}
