@@ -65,10 +65,10 @@ jobs:
       - uses: curvenote/actions/submit-summary@main
         id: summary
         with:
-          matrix: ${{ needs.strategy.outputs.matrix }}
+          matrix: "${{ needs.strategy.outputs.matrix }}"
       - uses: curvenote/actions/upsert-comment@main
         with:
-          comment: ${{ steps.summary.outputs.comment }}
+          comment: "${{ steps.summary.outputs.comment }}"
   # comment:
   #   needs:
   #     - preview
