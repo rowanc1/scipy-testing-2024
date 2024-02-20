@@ -69,6 +69,7 @@ jobs:
       - uses: curvenote/actions/upsert-comment@main
         with:
           comment: "${{ steps.summary.outputs.comment }}"
+      - run: 'blah'
   # comment:
   #   needs:
   #     - preview
