@@ -36,6 +36,7 @@ jobs:
         env:
           CURVENOTE_TOKEN: ${{ secrets.CURVENOTE_TOKEN }}
         with:
+          id: ${{ matrix.id }}
           venue: scipy
           kind: Article
           working-directory: ${{ matrix.working-directory }}
