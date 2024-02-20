@@ -56,6 +56,19 @@ jobs:
           images: false
       - run: curvenote check
         working-directory: ${{ matrix.working-directory }}
+  summary:
+    needs:
+      - strategy
+      - preview
+    runs-on: ubuntu-latest
+    steps:
+      - uses: curvenote/actions/submit-summary@main
+        id: summary
+        with:
+          matrix: ${{ needs.strategy.outputs.matrix }}
+      - uses: curvenote/actions/upsert-comment@main
+        with:
+          comment: ${{ steps.summary.outputs.comment }}
   # comment:
   #   needs:
   #     - preview
