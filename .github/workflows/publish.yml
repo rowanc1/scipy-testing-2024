@@ -20,6 +20,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           monorepo: true
+          enforceSingleFolder: true
           previewLabel: paper
           path: papers/*
   preview:
@@ -69,7 +70,6 @@ jobs:
       - uses: curvenote/actions/upsert-comment@main
         with:
           comment: "${{ steps.summary.outputs.comment }}"
-      - run: 'blah'
   # comment:
   #   needs:
   #     - preview
