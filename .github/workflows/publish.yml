@@ -1,21 +1,19 @@
-name: publish
+name: curvenote
 on:
-  push:
-    branches: [main]
   pull_request:
     branches: [main]
 permissions:
   contents: read
   pull-requests: write
 jobs:
-  curvenote:
+  publish:
     uses: curvenote/actions/.github/workflows/publish.yml@main
     with:
       monorepo: true
       id-pattern-regex: '^scipy-2023-(?:[a-zA-Z0-9-_]{3,15})$'
       enforce-single-folder: true
       preview-label: paper
-      submit-label: ready
+      submit-label: in-review
       venue: scipy
       kind: Article
       path: papers/*
