@@ -7,7 +7,7 @@ permissions:
   pull-requests: write
 jobs:
   publish:
-    uses: curvenote/actions/.github/workflows/publish.yml@main
+    uses: curvenote/actions/.github/workflows/publish.yml@v1
     with:
       monorepo: true
       id-pattern-regex: '^scipy-2023-(?:[a-zA-Z0-9-_]{3,15})$'
