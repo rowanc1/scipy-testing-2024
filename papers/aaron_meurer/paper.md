@@ -34,7 +34,7 @@ future work.
 Python users have a wealth of choices for libraries and frameworks for
 numerical computing [@Millman2011a; @Harris2020a; @Virtanen2020a; @Okuta2017a; @Rocklin2015a; @Vanderwalt2014a; @Hoyer2017a; @Abbasi2018a],
 data science [@Hunter2007a; @Perez2011a; @Seabold2010a; @Kluyver2016a],
-machine learning [@Pedregosa2011a], and deep learning {cite}`Chen2015a; Paszke2019a; Abadi2016a; Frostig2018a`.
+machine learning [@Pedregosa2011a], and deep learning [@Chen2015a; @Paszke2019a; @Abadi2016a; @Frostig2018a].
 New frameworks pushing forward the state of the art appear every year. One
 consequence of all this activity has been fragmentation in the fundamental
 building blocks—multidimensional arrays {cite}`Vanderwalt2011a` (also known as
