@@ -1,6 +1,6 @@
 version: 1
 project:
-  id: scipy-2023-david_calhas
+  id: scipy-2023-franklin_koch
   title: EEG-to-fMRI Neuroimaging Cross Modal Synthesis in Python
   authors:
     - name: David Calhas
