@@ -1,6 +1,7 @@
 # See docs at: https://mystmd.org/guide/frontmatter
 version: 1
 project:
+  id: scipy-2023-aaron_meurer
   title: 'Python Array API Standard: Toward Array Interoperability in the Scientific Python Ecosystem'
   # description:
   keywords:
@@ -75,7 +76,7 @@ project:
   # github: https://github.com/scipy-conference/scipy_proceedings
   subject: Research Article
   open_access: true
-  license: CC-BY-4.0
+  license: CC-BY-3.0
   venue: Scipy 2023
   date: 2023-07-10
   doi: 10.25080/gerudo-f2bc6f59-001
