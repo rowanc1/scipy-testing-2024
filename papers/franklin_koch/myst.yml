@@ -1,0 +1,45 @@
+version: 1
+project:
+  id: scipy-2023-franklin_koch
+  title: EEG-to-fMRI Neuroimaging Cross Modal Synthesis in Python
+  authors:
+    - name: David Calhas
+      email: david.calhas@tecnico.ulisboa.pt
+      affiliations:
+        - INESC-ID
+        - Instituto Superior Tecnico
+  keywords:
+    - Electroencephalography
+    - Functional Magnetic Resonance Imaging
+    - Synthesis
+    - Deep Learning
+    - Learning
+    - Machine Learning
+    - Computer Vision
+  subject: Research Article
+  open_access: true
+  license: CC-BY-3.0
+  venue: Scipy 2023
+  date: 2023-07-10
+  exports:
+    - format: typst
+      article: main.tex
+      template: https://github.com/rowanc1/scipy-template.git
+      title: EEG-to-fMRI Neuroimaging Cross Modal Synthesis in Python
+    - format: jats
+      article: main.tex
+  doi: 10.25080/gerudo-f2bc6f59-007
+  banner: banner.png
+  abbreviations:
+    EEG: electroencephalography
+    fMRI: functional magnetic resonance imaging
+    MRI: magnetic resonance imaging
+    RMSE: root mean squared error
+    MAE: mean absolute error
+site:
+  template: article-theme
+  actions:
+    - title: pdf
+      url: calhas.pdf
+      static: true
+  domains: []
