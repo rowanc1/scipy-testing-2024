@@ -1,7 +1,7 @@
 # See docs at: https://mystmd.org/guide/frontmatter
 version: 1
 project:
-  id: scipy-2024-aaron_meurer
+  id: scipy-2023-david_calhas
   title: 'Python Array API Standard: Toward Array Interoperability in the Scientific Python Ecosystem'
   # description:
   keywords:
